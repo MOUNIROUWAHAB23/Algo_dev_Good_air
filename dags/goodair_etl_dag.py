@@ -139,7 +139,7 @@ def check_pollution_and_alert():
     conn = psycopg2.connect(**DB_PARAMS)
     cursor = conn.cursor()
     
-    # On cherche les villes avec un AQI > 150 sur la dernière heure insérée : on met à >=0 pour tester les alertes même avec des données normales
+    # On cherche les villes avec un AQI > 150 sur la dernière heure insérée : on met à >=50 pour tester les alertes même avec des données normales
     query = """
         SELECT c.name, a.aqi  
         FROM fact_air_quality a 
