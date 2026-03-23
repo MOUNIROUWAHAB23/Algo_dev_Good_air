@@ -144,7 +144,7 @@ def check_pollution_and_alert():
         SELECT c.name, a.aqi  
         FROM fact_air_quality a 
         JOIN dim_city c ON a.city_id = c.city_id 
-        WHERE a.aqi >= 0 
+        WHERE a.aqi >= 50 
         AND a.timestamp >= NOW() - INTERVAL '1 hour';
     """
     cursor.execute(query)
